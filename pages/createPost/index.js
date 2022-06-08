@@ -10,21 +10,9 @@ function CreatePost() {
         try {
             const response = await createPost({ content });
             let contentItem = response.data.content;
-            if (contentItem.length > 120) {
-                alert(
-                    'The letter is longer than the maximum allowed length (120)'
-                );
-            }else{
-                window.location = window.location;
-            }
+            window.location = window.location;
         } catch (error) {
-            console.log(error)
-            if (error) {
-                alert(
-                    'The letter is longer than the maximum allowed length (120)'
-                );
-                window.location = window.location;
-            }
+            console.log(error);
         }
     };
 
