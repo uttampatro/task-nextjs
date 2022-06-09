@@ -8,7 +8,7 @@ export default async (req, res) => {
 
     if (method === 'GET') {
         try {
-            const posts = await Post.find().sort({created_at: -1});
+            const posts = await Post.find().sort({ created_at: -1 });
             res.status(200).json({ success: true, data: posts });
         } catch (error) {
             console.log(error);
@@ -20,7 +20,7 @@ export default async (req, res) => {
     } else if (method === 'POST') {
         try {
             const content = req.body.content;
-            const post = await  Post.create({ content });
+            const post = await Post.create({ content });
             res.status(201).json({ success: true, data: post });
         } catch (error) {
             console.log(error);
