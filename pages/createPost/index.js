@@ -9,7 +9,6 @@ function CreatePost() {
         e.preventDefault();
         try {
             const response = await createPost({ content });
-            let contentItem = response.data.content;
             window.location = window.location;
         } catch (error) {
             console.log(error);
