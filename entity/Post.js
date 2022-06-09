@@ -8,7 +8,7 @@ function formatAMPM(date) {
     let seconds = date.getSeconds()
     let ampm = hours >= 12 ? 'pm' : 'am';
     hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
+    hours = hours ? hours : 12; 
     minutes = minutes < 10 ? '0'+minutes : minutes;
     let strTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
     return strTime;
@@ -21,7 +21,7 @@ const postSchema = new Schema({
     },
     created_at: {
         type: String,
-        default: formatAMPM(new Date),
+        default: formatAMPM(new Date()),
     },
 });
 
